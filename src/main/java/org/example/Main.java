@@ -21,13 +21,13 @@ public class Main {
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
         // int <19 && int>13 -> true
-       if (firstAge < 19 && firstAge >13) {
+       if (firstAge <= 19 && firstAge >= 13) {
            return true;
        }
-        if (secondAge < 19 && secondAge >13) {
+        if (secondAge <= 19 && secondAge >= 13) {
             return true;
         }
-        if (thirdAge < 19 && thirdAge >13) {
+        if (thirdAge <= 19 && thirdAge >= 13) {
             return true;
         }
         return false;
@@ -37,18 +37,24 @@ public class Main {
         // temp<35 && temp>25 -> true
         // isSummer == true temp<45 -> true
         if (isSummer) {
-            if (temp < 45 && temp > 25) {
-                return true;
-            }
+            return temp <= 45 && temp >= 25;
+            } else {
+            return temp <= 35 && temp >= 25;
         }
-    return false;
     }
 
     public static double area(double width, double height) {
-       
+        if (width < 0 || height < 0) {
+            return -1;
+        }
+       return width * height;
     }
 
     public static double area(double radius) {
-       
+        if (radius < 0) {
+            return -1;
+        }
+
+       return radius * radius * Math.PI;
     }
 }
